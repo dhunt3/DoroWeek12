@@ -1,0 +1,48 @@
+Convert intTostring - no bulit in methods
+
+int num = 234;
+string[] array = {"0","1","2","3","4","5","6","7","8","9"};
+string answer = "";
+while (num > 0)
+{
+    int digit = num % 10;
+    num /= 10;
+    answer = array[digit] + answer;
+}
+Console.WriteLine(answer);
+Console.WriteLine(answer.GetType());
+
+
+*****************************************
+
+int num = -214;
+string[] array = {"0","1","2","3","4","5","6","7","8","9"};
+string answer = "";
+if (num < 0)
+{
+    num = num * -1;
+    while(num > 0)
+    {
+    int digit = num % 10;
+    num /= 10;
+    answer = array[digit] + answer;
+    }
+    Console.WriteLine("-" + answer);
+}
+else
+{
+    if (num > 2147483647)
+    {
+    Console.WriteLine("2147483648");	// error handling here. Can't go higher than 2147483647 for ints.
+    }
+    else
+    {
+    while(num > 0)
+    {
+    int digit = num % 10;
+    num /= 10;
+    answer = array[digit] + answer;
+    }
+    Console.WriteLine(answer);
+    }
+}
